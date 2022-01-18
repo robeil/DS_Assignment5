@@ -62,6 +62,7 @@ public class Student implements  Comparable<Student>{
     //Compare method
     @Override
     public int compareTo(Student o) {
+
         return this.getScore() - o.getScore();
     }
     //equal method
