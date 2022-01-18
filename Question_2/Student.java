@@ -65,10 +65,5 @@ public class Student implements  Comparable<Student>{
 
         return this.getScore() - o.getScore();
     }
-    //equal method
-    @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
 
 }
