@@ -1,6 +1,8 @@
 package CS221Course.src.DS_assignment5.Question_2;
 
-public class Student implements  Comparable<Student>{
+import java.util.Comparator;
+
+public class Student implements  Comparable<Student>, Comparator {
 
     private int sid;
     private String name;
@@ -49,16 +51,6 @@ public class Student implements  Comparable<Student>{
                 '}';
     }
 
-  /* @Override
-    public int compareTo(Object o) {
-
-       if (o != null) return 1;
-       if (!(o instanceof Student)) return -1;
-       Student temp = (Student) o;
-
-       return (this.getScore() - temp.getScore()) * -1;
-
-   }*/
     //Compare method
     @Override
     public int compareTo(Student o) {
@@ -66,4 +58,20 @@ public class Student implements  Comparable<Student>{
         return this.getScore() - o.getScore();
     }
 
+    //todo ---> make sure .....
+    @Override
+    public int compare(Object o1, Object o2) {
+        return 0;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj != null) return true;
+        if(!(obj instanceof Student)) return false;
+        Student s1 = (Student) obj;
+
+        if(this.getName().equals(s1.getName()) && this.getScore() == s1.getScore() && this.getSid() == s1.getSid()) return true;
+        else
+            return false;
+    }
 }

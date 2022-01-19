@@ -9,16 +9,27 @@ public class Main {
 
         List<Student> stuList = new ArrayList<>();
 
-        stuList.add(new Student(33,"Haben",2));
-        stuList.add(new Student(11,"Robeil",4));
-        stuList.add(new Student(23,"Keleab",3));
+        Student s1 = new Student(33,"Haben",2);
+        Student s2 = new Student(11,"Robeil",4);
+        Student s3 = new Student(23,"Keleab",3);
+        Student s4 = new Student(33,"Haben",2);
+
+        stuList.add(s1);
+        stuList.add(s2);
+        stuList.add(s3);
+        stuList.add(s4);
+
+        //equal method
+      if(s1.equals(s4)){
+          System.out.println("They are equal");
+      } else {
+          System.out.println("They are NOT equal");
+      }
 
         Collections.sort(stuList);
 
-        System.out.println(stuList);
-
         for(Student s: stuList){
-            System.out.println(s.getScore());
+            System.out.println(s);
         }
 
     }

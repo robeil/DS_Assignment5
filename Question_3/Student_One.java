@@ -4,9 +4,9 @@ import CS221Course.src.DS_assignment5.Question_2.Student;
 
 import java.util.*;
 
-public class Student_One extends Student implements Comparator<Student> {
+public class Student_One extends Student implements Comparator {
 
-    @Override
+   // @Override
     public int compare(Student o1, Student o2) {
         return o1.getName().compareTo(o2.getName());
     }
@@ -17,19 +17,31 @@ public class Student_One extends Student implements Comparator<Student> {
         if(obj != null) return true;
         if(!(obj instanceof Student)) return false;
         Student s1 = (Student) obj;
-        return super.getName().equals(s1.getName());
+
+       if(this.getName().equals(s1.getName()) && this.getScore() == s1.getScore() && this.getSid() == s1.getSid()) return true;
+       else
+           return false;
     }
 
     public static void main(String[] args) {
 
-        Student s4 = new Student(45,"Samuel",9);
+        Student s4 = new Student(33,"Samuel",2);
         Student s2 = new Student(11,"Robeil",4);
         Student s3 = new Student(23,"Keleab",3);
         Student s1 = new Student(33,"Samuel",2);
 
+        //Comparator
         Student_One comp = new Student_One();
-       //System.out.println(s1.equals(s4));
-        System.out.println(comp.compare(s1,s4));
+
+        //comparing two student using comparator
+         System.out.println(comp.compare(s1,s4));
+
+         //Equal method
+        if(s4.equals(s1)){
+            System.out.println("They are equal");
+        } else{
+            System.out.println("They are not equal");
+        }
 
         List<Student> stuList = new ArrayList<>();
         stuList.add(s1);
@@ -37,8 +49,16 @@ public class Student_One extends Student implements Comparator<Student> {
         stuList.add(s3);
         stuList.add(s4);
 
+        //collections using comparator (comp)
         Collections.sort(stuList,comp);
-        System.out.println(stuList);
+        //Iterator
+        Iterator<Student> stu = stuList.iterator();
+        //printing using Iterator
+        while(stu.hasNext()){
+            System.out.println(stu.next());
+
+        }
+
 
 
     }
