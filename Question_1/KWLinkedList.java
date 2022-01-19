@@ -468,34 +468,19 @@ public class KWLinkedList<E>  extends AbstractSequentialList<E>{
     //TODO ---> creating removeAllOf() method using iterator
     public void removeAllOf(String target){
 
+        //int count = 0;
         Node<E> current = head;
-        Node<E> remove = null;
         Iterator<E> itr = iterator();
+        String[] toRemove = new String[size];
 
         while(itr.hasNext() && current != null){
-            if(target.equals(itr.next())){
-                remove = current;
-                remove(remove);
+
+            if(target.equals(current.data)){
+                toRemove[size-1] = (String)current.data;
+                remove(toRemove[size-1]);
             }
             current = current.next;
         }
     }
-
-    public static void main(String[] args) {
-
-        List<String> list = new LinkedList();
-
-        list.add("Sami");
-        list.add("Robeil");
-        list.add("Merhawi");
-        list.add("Yonas");
-        list.add("Sami");
-
-        System.out.println(list);
-
-        list.removeAll(Collections.singleton("Sami"));
-
-        System.out.println(list);
-      }
     }
 
