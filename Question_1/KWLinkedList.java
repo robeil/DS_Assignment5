@@ -1,9 +1,6 @@
 package CS221Course.src.DS_assignment5.Question_1;
 
-import java.util.AbstractSequentialList;
-import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class KWLinkedList<E>  extends AbstractSequentialList<E>{
 
@@ -468,11 +465,37 @@ public class KWLinkedList<E>  extends AbstractSequentialList<E>{
         sam.prev.next = sam.next;
         sam.prev = null;
     }
-    //TODO ---> creating removeAllOf() method using iterator ---?
+    //TODO ---> creating removeAllOf() method using iterator
     public void removeAllOf(String target){
-        Node<E> current = head;
 
+        int count = 0;
+        Node<E> current = head;
+        E[] toRemove = null;
+        Iterator<E> itr = iterator();
+
+        while(itr.hasNext() && current != null){
+            if(target.equals(itr.next())){
+                toRemove[count] = current.data;
+                remove(toRemove[count]);
+            }
+            current = current.next;
+        }
     }
-    /*</exercise>*/
+
+    public static void main(String[] args) {
+
+        List<String> list = new LinkedList();
+
+        list.add("Sami");
+        list.add("Robeil");
+        list.add("Merhawi");
+        list.add("Yonas");
+        list.add("Sami");
+
+        System.out.println(list);
+
+        list.removeAll(Collections.singleton("Sami"));
+        System.out.println(list);
+      }
     }
 
