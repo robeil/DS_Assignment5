@@ -1,11 +1,14 @@
 package CS221Course.src.DS_assignment5.Question_1;
 
-public class Main {
+import java.util.Iterator;
+
+public class Main  {
 
     public static void main(String[] args) {
 
         //List<String> list = new LinkedList();
         KWLinkedList<String> list = new KWLinkedList<String>();
+        //List<String> list = new ArrayList<>();
 
         list.add("Sami");
         list.add("Robeil");
@@ -13,12 +16,15 @@ public class Main {
         list.add("Yonas");
         list.add("Sami");
 
-        System.out.println(list);
+       // System.out.println(list);
 
         list.removeAllOf("Sami");
-       // list.removeAll(Collections.singleton("Sami"));
 
+        Iterator iter =  list.iterator(); //todo Iterator to fix
 
-        System.out.println(list);
+        while(iter.hasNext()){
+            System.out.println(iter.next());
+        }
+        //System.out.println(list);
     }
 }
