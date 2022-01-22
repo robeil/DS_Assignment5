@@ -470,7 +470,7 @@ public class KWLinkedList<E>  extends AbstractSequentialList<E>{
 
         Node<E> current = head;
         Iterator<E> itr = iterator();
-       E toRemove = null;
+        E toRemove = null;
 
         while(itr.hasNext() && current != null){
           //todo create Iterator here

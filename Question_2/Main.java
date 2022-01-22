@@ -26,11 +26,14 @@ public class Main {
           System.out.println("They are NOT equal");
       }
 
-        Collections.sort(stuList);
+      Collections.sort(stuList);
 
-        for(Student s: stuList){
+      System.out.println(s1.compareTo(s4));
+
+
+      for(Student s: stuList){
             System.out.println(s);
-        }
+      }
 
     }
 }

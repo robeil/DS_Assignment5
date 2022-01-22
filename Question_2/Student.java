@@ -54,14 +54,17 @@ public class Student implements  Comparable<Student>, Comparator {
     //Compare method
     @Override
     public int compareTo(Student o) {
-
         return this.getScore() - o.getScore();
     }
 
     //todo ---> make sure .....
     @Override
     public int compare(Object o1, Object o2) {
-        return 0;
+
+        Student s1 = (Student) o1;
+        Student s2 = (Student) o2;
+
+        return s1.compareTo(s2);
     }
 
     @Override
